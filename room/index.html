@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Room Viewer</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #1a1a1a;
+        }
+        model-viewer {
+            width: 100vw;
+            height: 100vh;
+            background: #1a1a1a;
+        }
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.7);
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 14px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <model-viewer
+        src="room_web.glb"
+        alt="3D Room Scan"
+        camera-controls
+        auto-rotate
+        auto-rotate-delay="2000"
+        rotation-per-second="0.5"
+        exposure="1.2"
+        shadow-intensity="0"
+        environment-image="neutral"
+        camera-orbit="0deg 75deg 25m"
+        min-camera-orbit="auto auto 5m"
+        max-camera-orbit="auto auto 50m"
+        interaction-prompt="none"
+    >
+    </model-viewer>
+    <div class="controls">
+        Click & drag to rotate • Scroll to zoom
+    </div>
+</body>
+</html>
